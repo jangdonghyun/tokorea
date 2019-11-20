@@ -10,9 +10,12 @@ import Memo from '../pages/MemoHome'
 import { Provider } from 'react-redux';
 import configureStore from '../store/configureStore';
 import AddMemoContainer from '../containers/AddMemo';
-import MemoContainer from '../containers/Memo'
-import MemoList from '../containers/MemoList'
-import MemoHome from '../containers/MemoHome'
+import MemoContainer from '../containers/Memo';
+import MemoList from '../containers/MemoList';
+import MemoHome from '../containers/MemoHome';
+import MemoRoute from './memo';
+import History from './History';
+
 
 const store = configureStore()
 
@@ -26,7 +29,8 @@ export default () => (
       <Route path="/intro" component={SectionIntro} />
       <Route path="/map" component={SectionMap} />
       <Route path="/choice" component={SectionChoice} />
-      <Route exact path="/home" component={MemoHome} />
+      <Route path="/memo" component={MemoRoute} />
+      <Route path="/history" component={History} />
     </Router>
   </Provider>
 )

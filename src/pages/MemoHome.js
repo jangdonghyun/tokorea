@@ -8,7 +8,8 @@ import { List, ListItem } from '../components/List';
 import MemoRouter from '../components/memo';
 
 function MemoHome(props) {
-    const { memos, deletedMemos } = props
+    const { memos, deletedMemos } = props;
+    const { match, path } = props;
     return (
       <>
       <Layout>
@@ -16,8 +17,7 @@ function MemoHome(props) {
         <SidebarTitle>폴더</SidebarTitle>
         <List>
           <ListItem first>
-            <Link to="/list">메모({memos.length})</Link>
-            <MemoRouter />
+            <Link to={match.url+'/list'}>메모({memos.length})</Link>
           </ListItem>
           <ListItem>
             <Link to="/trash">휴지통()</Link>
